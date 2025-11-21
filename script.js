@@ -1,4 +1,3 @@
-
 // Menu Mobile
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
@@ -7,7 +6,7 @@ const navLinks = document.querySelectorAll('nav a');
 menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     
-    // Anima o ícone hambúrguer
+    // Animação ícone hambúrguer
     const spans = menuToggle.querySelectorAll('span');
     if (navMenu.classList.contains('active')) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -80,14 +79,6 @@ prevBtn.addEventListener('click', () => {
 
 startAutoPlay();
 
-// Formulário
-const form = document.querySelector('.contact-form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-    form.reset();
-});
-
 // Animação ao scroll
 const observerOptions = {
     threshold: 0.1,
@@ -108,4 +99,26 @@ document.querySelectorAll('.project-card').forEach(card => {
     card.style.transform = 'translateY(30px)';
     card.style.transition = 'all 0.6s ease';
     observer.observe(card);
+});
+
+// Formulário com SweetAlert2
+document.querySelector(".contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault(); // impedir redirecionamento padrão
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    await fetch(form.action, {
+        method: "POST",
+        body: formData
+    });
+
+    Swal.fire({
+        icon: "success",
+        title: "Mensagem enviada!",
+        text: "Obrigado por entrar em contato. Retornaremos em breve!",
+        confirmButtonText: "OK"
+    });
+
+    form.reset();
 });

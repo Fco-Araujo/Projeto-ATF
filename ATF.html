@@ -139,21 +139,30 @@
     <section id="contato">
         <div class="container">
             <h2>Entre em Contato</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Enviar Mensagem</button>
-            </form>
+           <form action="https://formsubmit.co/atfwebsolucoes@gmail.com" method="POST" class="contact-form">
+
+    <!-- configurações extras -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+</form>
+
         </div>
     </section>
 
@@ -169,6 +178,8 @@
             <path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411zm-8.475 18.3c-1.776 0-3.517-.477-5.028-1.378l-.36-.214-3.742.975 1.004-3.637-.235-.374c-.99-1.574-1.512-3.393-1.512-5.26.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898 1.868 1.87 2.891 4.352 2.891 6.993-.002 5.45-4.436 9.885-9.888 9.885z"/>
         </svg>
     </a>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
